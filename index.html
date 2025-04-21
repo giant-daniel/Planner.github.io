@@ -3,49 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Web Planner</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Planner App - Login</title>
+    <link rel="stylesheet" href="llogin.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <div class="container">
-      <h1><i class="fas fa-calendar-alt"></i> My Daily Planner</h1>
-
-      <div class="input-section">
-        <input type="text" id="taskInput" placeholder="Add a new task..." />
-        <input type="date" id="taskDate" />
-        <select id="taskCategory">
-          <option value="Work">Work</option>
-          <option value="Personal">Personal</option>
-          <option value="Study">Study</option>
-        </select>
-        <select id="taskPriority">
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        <button id="addTaskBtn"><i class="fas fa-plus"></i> Add Task</button>
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <button class="tab active" id="loginTab">Login</button>
+        <button class="tab" id="signupTab">Sign Up</button>
       </div>
 
-      <div class="filter-section">
-        <input type="text" id="searchTask" placeholder="Search tasks..." />
-        <button id="showAll">All</button>
-        <button id="showToday">Today</button>
-        <button id="showCompleted">Completed</button>
-        <button id="exportTasks">Export</button>
-        <input type="file" id="importTasks" style="display: none" />
-        <button id="importBtn">Import</button>
+      <div class="auth-form" id="loginForm">
+        <h2>Welcome Back!</h2>
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button id="loginBtn">Login</button>
+        <p class="auth-message" id="loginMessage"></p>
       </div>
 
-      <ul id="taskList"></ul>
+      <div class="auth-form hidden" id="signupForm">
+        <h2>Create Account</h2>
+        <div class="form-group">
+          <label for="signupName">Name</label>
+          <input type="text" id="signupName" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Create password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="signupConfirmPassword"
+            placeholder="Confirm password"
+          />
+        </div>
+        <button id="signupBtn">Sign Up</button>
+        <p class="auth-message" id="signupMessage"></p>
+      </div>
     </div>
 
-    <audio id="notificationSound" src="notification.mp3" preload="auto"></audio>
-
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="llogin.js"></script>
   </body>
 </html>

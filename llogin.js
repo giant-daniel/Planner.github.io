@@ -42,7 +42,7 @@ loginBtn.addEventListener("click", () => {
     // Save current user to session
     sessionStorage.setItem("currentUser", JSON.stringify(user));
     // Redirect to planner
-    window.location.href = "index.html";
+    window.location.href = "planner.html";
   } else {
     loginMessage.textContent = "Invalid email or password";
   }
@@ -87,12 +87,12 @@ signupBtn.addEventListener("click", () => {
 
   // Auto login after signup
   sessionStorage.setItem("currentUser", JSON.stringify(newUser));
-  window.location.href = "index.html";
+  window.location.href = "planner.html";
 });
 
 // Check if already logged in
 window.addEventListener("DOMContentLoaded", () => {
   if (sessionStorage.getItem("currentUser")) {
-    window.location.href = "index.html";
+    window.location.href = "planner.html";
   }
 });
